@@ -1,11 +1,17 @@
 {
-  "name": "k-ui",
-  "version": "0.0.1",
+  "name": "@kinz/k-ui",
+  "version": "0.0.2",
   "description": "Ku UI is new light react UI component libray",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:firstpersonl/k-ui.git"
+  },
   "files": [
-    "dist"
+    "dist",
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ],
   "types": "dist/index.d.ts",
   "author": "kinz",
