@@ -3,21 +3,21 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
-import autoprefixer from "autoprefixer";
+// import autoprefixer from "autoprefixer";
 
-const packageJson = require("./package.json");
+const pkg = require("./package.json");
 
 export default [
     {
         input: "src/index.ts",
         output: [
             {
-                file: packageJson.main,
+                file: pkg.main,
                 format: "cjs",
                 sourcemap: true,
             },
             {
-                file: packageJson.module,
+                file: pkg.module,
                 format: "esm",
                 sourcemap: true,
             }
@@ -31,10 +31,11 @@ export default [
                 sourceMap: true,
                 autoModules: true,
                 plugins: [
-                    autoprefixer()
+                    // autoprefixer()
                 ],
             }),
         ],
+        external: Object.keys(pkg.peerDependencies)
     },
     {
         input: "dist/esm/types/index.d.ts",
